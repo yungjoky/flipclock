@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Motivational Quotes Clock</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
+</head>
+<body>
+    <div class="clock" style="align-items: center;"></div>
+    <div class="quote"></div>
+    <footer>
+        <p class="footertext">made by <a href="https://github.com/yungjoky">yungjoky</a></p>
+    </footer>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var clock = $('.clock').FlipClock({
+                clockFace: 'TwelveHourClock'
+            });
+            var quotes = [
+                "You are braver than you believe, stronger than you seem, and smarter than you think. — Christopher Robin",
+                "Stand up to your obstacles and do something about them. You will find that they haven’t half the strength you think they have. — Norman Vincent Peale",
+                "Strong is the new skinny. — Unknown",
+                "Incredible change happens in your life when you decide to take control of what you do have power over instead of craving control over what you don’t. — Steve Maraboli",
+                "You have to have confidence in your ability, and then be tough enough to follow through. — Rosalynn Carter",
+                "Never lose hope. Storms make people stronger and never last forever. — Roy T. Bennett",
+                "You are very powerful, provided you know how powerful you are. — Yogi Bhajan",
+                "Don’t wait until everything is just right. It will never be perfect. There will always be challenges, obstacles, and less than perfect conditions. So what. Get started now. — Mark Victor Hansen",
+                "Let go of the thoughts that don’t make you strong. — Karen Salmansohn",
+                "Strength does not come from winning. Your struggles develop your strengths. — Arnold Schwarzenegger",
+                "When the going gets tough, the tough get going. — English Proverb",
+                "Be stronger than your excuses. — Unknown",
+                "Be patient with yourself. You are growing stronger every day. — Robert Tew",
+                "Build up your weaknesses until they become your strong points. — Knute Rockne",
+                "Celebrate your success and stand strong when adversity hits, for when the storm clouds come in, the eagles soar while the small birds take cover. — Napoleon Hill",
+                "I was always looking outside myself for strength and confidence but it comes from within. — Anne Freud",
+                "Tough times never last, but tough people do. — Robert H. Schuller",
+                "He who conquers himself is the mightiest warrior. — Confucius",
+                "Mastering others is strength. Mastering yourself is true power. — Lao Tzu",
+                "The strongest oak tree of the forest is not the one that is protected from the storm and hidden from the sun. — Napoleon Hill",
+                "You have power over your mind – not outside events. Realize this, and you will find strength. — Marcus Aurelius",
+                "You gain strength, courage, and confidence by every experience in which you really stop to look fear in the face. — Eleanor Roosevelt",
+                "You never know how strong you are until being strong is the only choice you have. — Cayla Mills",
+                "We can make ourselves miserable, or we can make ourselves strong. — Pema Chodron",
+                "Self care is how you take your power back. — Lalah Delia",
+                "We do not have to become heroes overnight. Just a step at a time meeting each thing as it comes up. — Eleanor Roosevelt",
+                "The greatest antidote to insecurity and a sense of fear is compassion. — Dalai Lama",
+                "Life doesn’t get easier or more forgiving; we get stronger and more resilient. — Steve Maraboli",
+                "In union there is strength. — Aesop",
+                "Though she be but little, she is fierce. — William Shakespeare",
+                "With the new day comes new strength and new thoughts. — Eleanor Roosevelt",
+                "The most common way people give up their power is by thinking they don’t have any. — Alice Walker",
+                "The resistance that you fight physically in the gym and the resistance that you fight in life can only build a strong character. — Arnold Schwarzenegger",
+                "Anyone can give up; it is the easiest thing in the world to do. But to hold it together when everyone would expect you to fall apart, now that is true strength. — Chris Bradford",
+                "You never know what you can do until you have to do it. — Proverb",
+                "Believe in yourself and all that you are.",
+                "The only way to do great work is to love what you do.",
+                "You are never too old to set another goal or to dream a new dream.",
+                "Success is not the key to happiness. Happiness is the key to success.",
+                "What lies behind us and what lies before us are tiny matters compared to what lies within us."
+            ];
+            function displayRandomQuote() {
+                var randomIndex = Math.floor(Math.random() * quotes.length);
+                var selectedQuote = quotes[randomIndex];
+                $('.quote').css('opacity', 0);
+                setTimeout(function () {
+                  
+                    $('.quote').text(selectedQuote).css('opacity', 1);
+                }, 1000);
+            }
+
+            var firstQuoteIndex = Math.floor(Math.random() * quotes.length);
+            $('.quote').text(quotes[firstQuoteIndex]).css('opacity', 0).animate({opacity: 1}, 1000);
+            setInterval(displayRandomQuote, 10000);
+        });
+    </script>
+</body>
+</html>
